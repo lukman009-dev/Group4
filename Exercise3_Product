@@ -1,16 +1,16 @@
 public class Product {
-
+//attributes
     private String productCode;
     private String productName;
     private String category;
     private double unitPrice;
     private int quantityInStock;
     private int reorderLevel;
-
+//Default constructor 
     public Product() {
         this.reorderLevel =10;
     }
-
+//perimeterized constructor 
     public Product(String productCode, String productName, String category,
                    double unitPrice, int quantityInStock) {
 
@@ -27,6 +27,7 @@ public class Product {
         this.reorderLevel = 10;
     }
 
+//getters
     public String getProductCode() {
         return productCode;
     }
@@ -51,6 +52,7 @@ public class Product {
         return reorderLevel;
     }
 
+//setters
     public void setUnitPrice(double unitPrice) {
         if (unitPrice > 0) {
             this.unitPrice = unitPrice;
