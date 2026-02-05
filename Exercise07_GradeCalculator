@@ -5,13 +5,16 @@ public class GradeCalculator {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== Grade Calculator ===\n");
+// Get score from user
 
         System.out.print("Enter your exam score (0-100): ");
         int score = scanner.nextInt();
+// Validate input
 
         if (score < 0 || score > 100) {
             System.out.println("Error: Score must be between 0 and 100!");
         } else {
+// Determine grade
             char grade;
             String description;
 
@@ -34,10 +37,12 @@ public class GradeCalculator {
                 grade = 'F';
                 description = "Fail";
             }
+// Display results
 
             System.out.println("\n--- Results ---");
             System.out.println("Score: " + score);
             System.out.println("Grade: " + grade + " (" + description + ")");
+// Pass/Fail status
 
             if (score >= 50) {
                 System.out.println("Status: PASSED! Congratulations!");
