@@ -1,0 +1,117 @@
+public class Employee {
+
+    private String employeeId;
+    private String firstName;
+    private String lastName;
+    private String department;
+    private double salary;
+    private int yearsOfService;
+
+    public Employee() {
+        this.salary = 0.0;
+        this.yearsOfService =0;
+    }
+
+    public Employee(String employeeId, String firstName, String lastName,
+                    String department, double salary, int yearsOfService) {
+
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+
+        if (salary>0)
+            this.salary = salary;
+
+        if (yearsOfService >= 0)
+            this.yearsOfService = yearsOfService;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public int getYearsOfService() {
+        return yearsOfService;
+    }
+
+    public void setSalary(double salary) {
+        if (salary > 0) {
+            this.salary = salary;
+        }
+    }
+
+    public void setYearsOfService(int yearsOfService) {
+        if (yearsOfService >= 0) {
+            this.yearsOfService = yearsOfService;
+        }
+    }
+
+    public double calculateAnnualSalary() {
+        return salary * 12;
+    }
+
+    public double calculateBonus() {
+        if (yearsOfService >= 10) {
+            return salary * 0.10;
+        } else if (yearsOfService >= 5) {
+            return salary * 0.05;
+        } else {
+            return 0;
+        }
+    }
+
+    public void promote(double increment) {
+        if (increment > 0) {
+            salary += increment;
+        }
+    }
+
+    public void displayEmployeeInfo() {
+        System.out.println("Employee ID:"+ employeeId);
+        System.out.println("Name: "+ firstName + " "+ lastName);
+        System.out.println("Department: "+ department);
+        System.out.println("Monthly Salary: "+ salary);
+        System.out.println("Years of Service: "+ yearsOfService);
+        System.out.println("Annual Salary: "+ calculateAnnualSalary());
+        System.out.println("Bonus: "+ calculateBonus());
+        System.out.println("------------");
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("=== Employee Management System ===\n");
+
+        Employee emp1 =
+            new Employee("EMP001", "Ali", "Hassan", "IT", 800000, 6);
+
+        Employee emp2 =
+            new Employee("EMP002", "Asha", "Mohamed", "HR", 600000, 3);
+
+        emp1.displayEmployeeInfo();
+        emp2.displayEmployeeInfo();
+
+        emp1.promote(200000);
+
+        System.out.println("After Promotion:\n");
+        emp1.displayEmployeeInfo();
+
+        System.out.println("=== Exercise Complete ===");
+    }
+}
