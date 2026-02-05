@@ -1,9 +1,10 @@
 public class Rectangle{
+//private attribute
     private double length;
     private double width;
     private String color;
     private boolean isFilled;
-    
+//Constractor
     public Rectangle(){
         this.length=1;
         this.width=1;
@@ -11,6 +12,7 @@ public class Rectangle{
         this.isFilled=false;
         
     }
+// Setters and Getters
     public Rectangle(double length,double width){
         setLength(length);
         setWidth(width);
@@ -37,6 +39,7 @@ public class Rectangle{
     public boolean isFilled(){
         return isFilled;
     }
+//Setters with validation
     public void setLength(double length){
         if (length>0){
             this.length=length;
@@ -59,6 +62,7 @@ public class Rectangle{
     public void setFilled(boolean isFilled){
         this.isFilled=isFilled;
     }
+//Behaviour
     public double calculateArea(){
         return length*width;
     }
