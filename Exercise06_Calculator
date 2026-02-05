@@ -3,18 +3,22 @@ public class Calculator{
   public static void main(String [] args){
         Scanner scanner=new Scanner(System.in);
         System.out.println("=======simple calculator==");
+//Get first number
         
         System.out.print("Enter first number");
         double num1=scanner.nextDouble();
+//Get second number
         
         System.out.print("Enter second number");
         double num2=scanner.nextDouble();
+//Get operation
         
         System.out.print("Enter operation(+,-,*,/);");
         char operation=scanner.next().charAt(0);
         
         double result;
         boolean validOperation =true;
+//perform Calculation using switch
         
         
         switch(operation){
