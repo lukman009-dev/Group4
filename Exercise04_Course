@@ -9,7 +9,7 @@ public class Course{
     private boolean isActive;
 
     public Course() {
-//create contractors
+//default contractors
         this.courseCode = "Unknown";
         this.courseName = "Unknown Course";
         this.instructorName = "Not Assigned";
@@ -18,10 +18,11 @@ public class Course{
         this.enrolledStudents = 0;
         this.isActive = true;
     }
+//parameterized constructors
     public Course(String courseCode, String courseName, int creditHours, int maxCapacity) {
         this.courseCode = courseCode;
         this.courseName = courseName;
-//setters validation
+
         setCreditHours(creditHours);
         setMaxCapacity(maxCapacity);
 
@@ -29,6 +30,7 @@ public class Course{
         this.enrolledStudents = 0;
         this.isActive = true;
     }
+//Getters
 
     public String getCourseCode() {
         return courseCode;
@@ -57,7 +59,7 @@ public class Course{
     public boolean getIsActive() {
         return isActive;
     }
-    
+    //setters with validation
     public void setCreditHours(int creditHours) {
         if (creditHours >= 1 && creditHours <= 6) {
             this.creditHours = creditHours;
@@ -74,12 +76,16 @@ public class Course{
             System.out.println("Max Capacity must be greater than 0!");
             this.maxCapacity = 10;
         }
-    }
+}
+//Behaviour method
+//Assign instructor
+    
 
     public void assignInstructor(String name) {
         instructorName = name;
         System.out.println("Instructor assigned: " + name);
     }
+//Enroll student
 
     public boolean enrollStudent() {
         if (isActive && enrolledStudents < maxCapacity) {
@@ -88,20 +94,21 @@ public class Course{
         }
         return false;
     }
-
+//student drop
     public void dropStudent() {
         if (enrolledStudents > 0) {
             enrolledStudents--;
         }
     }
-
+// available seats get 
     public int getAvailableSeats() {
         return maxCapacity - enrolledStudents;
     }
-
+// check if full
     public boolean isFull() {
         return enrolledStudents == maxCapacity;
     }
+// cancel course
     
     public void cancelCourse() {
         if (enrolledStudents == 0) {
@@ -111,6 +118,7 @@ public class Course{
             System.out.println("Cannot cancel course. Students are enrolled.");
         }
     }
+//Display course info
 
     public void displayCourseInfo() {
         System.out.println("\n--- Course Information ---");
@@ -123,6 +131,7 @@ public class Course{
         System.out.println("Available Seats: " + getAvailableSeats());
         System.out.println("Active: " + isActive);
     }
+//Main method testing
 
     public static void main(String[] args) {
 
@@ -139,7 +148,7 @@ public class Course{
         for (int i = 0; i < 38; i++) {
             course1.enrollStudent();
         }
-
+// create course1 1nd course2
         course1.displayCourseInfo();
 
         System.out.println("\nAvailable seats in course1: " + course1.getAvailableSeats());
