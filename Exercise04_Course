@@ -1,4 +1,5 @@
 public class Course{
+//private attributes
     private String courseCode;
     private String courseName;
     private String instructorName;
@@ -8,6 +9,7 @@ public class Course{
     private boolean isActive;
 
     public Course() {
+//create contractors
         this.courseCode = "Unknown";
         this.courseName = "Unknown Course";
         this.instructorName = "Not Assigned";
@@ -16,11 +18,10 @@ public class Course{
         this.enrolledStudents = 0;
         this.isActive = true;
     }
-    
     public Course(String courseCode, String courseName, int creditHours, int maxCapacity) {
         this.courseCode = courseCode;
         this.courseName = courseName;
-
+//setters validation
         setCreditHours(creditHours);
         setMaxCapacity(maxCapacity);
 
