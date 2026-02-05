@@ -1,4 +1,4 @@
-public class Product {
+⁷public class Product {
 //attributes
     private String productCode;
     private String productName;
@@ -70,14 +70,14 @@ public class Product {
             this.reorderLevel = reorderLevel;
         }
     }
-
+//addition of stock
   
     public void addStock(int quantity) {
         if (quantity > 0) {
             quantityInStock += quantity;
         }
     }
-
+//sell product
     public boolean sellProduct(int quantity) {
         if (quantity > 0 && quantity <= quantityInStock) {
             quantityInStock -= quantity;
@@ -99,7 +99,7 @@ public class Product {
             unitPrice -= unitPrice * (percentage / 100);
         }
     }
-
+//display productinfo
     public void displayProductInfo() {
         System.out.println("Product Code: "+ productCode);
         System.out.println("Product Name: "+ productName);
