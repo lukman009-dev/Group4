@@ -1,17 +1,17 @@
 public class Employee {
-
+//attribute
     private String employeeId;
     private String firstName;
     private String lastName;
     private String department;
     private double salary;
     private int yearsOfService;
-
+//Default constructor 
     public Employee() {
         this.salary = 0.0;
         this.yearsOfService =0;
     }
-
+//perimeterized constructor 
     public Employee(String employeeId, String firstName, String lastName,
                     String department, double salary, int yearsOfService) {
 
@@ -26,7 +26,7 @@ public class Employee {
         if (yearsOfService >= 0)
             this.yearsOfService = yearsOfService;
     }
-
+//getters
     public String getEmployeeId() {
         return employeeId;
     }
@@ -51,6 +51,7 @@ public class Employee {
         return yearsOfService;
     }
 
+//setters
     public void setSalary(double salary) {
         if (salary > 0) {
             this.salary = salary;
