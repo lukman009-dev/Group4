@@ -4,9 +4,11 @@ public class MultiplicationTable{
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== Multiplication Table Generator ===\n");
+// Get number from user
 
         System.out.print("Enter a number: ");
         int number = scanner.nextInt();
+// Generate multiplication table using for loop
 
         System.out.println("\nMultiplication Table for " + number + ":");
         System.out.println("================================");
